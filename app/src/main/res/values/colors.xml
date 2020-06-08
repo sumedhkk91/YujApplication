@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent">#D0000000</color>
+    <color name="black">#000000</color>
+    <color name="dark_gray">#333333</color>
+    <color name="gray_inactive">#7D7D7D</color>
+    <color name="ripple">#20000000</color>
+    <color name="light_gray">#D7D7D7</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="teal">#00cca3</color>
+    <color name="green">#02cf73</color>
+    <color name="purple">#512DA8</color>
+    <color name="pink">#ff4081</color>
+    <color name="peach">#ff6666</color>
+    <color name="blue">#004794</color>
+    <color name="yellow">#ffbb1c</color>
+    <color name="red">#da1031</color>
+    <color name="gold">#FFDF00</color>
+
+    <color name="dark_primary">#940b21</color>
+    <color name="primary">#da1031</color>
+    <color name="light_primary">#fef6f7</color>
+    <color name="separator_color">@color/light_gray</color>
+    <color name="separator_color_dark">@color/dark_gray</color>
+    <color name="accent_color">#940b21</color>
+    <color name="transparent_primary">#cfda1031</color>
+    <color name="transparent_light_primary">#dffef6f7</color>
+    <color name="active_selection">@color/pink</color>
+
+    <color name="primary_text_color">#212121</color>
+    <color name="secondary_text_color">#666666</color>
+    <color name="dialog_text_color">#606060</color>
+
+    <color name="option_bg_green">#2000FF00</color>
+    <color name="option_bg_red">#20FF0000</color>
+
+    <color name="timer_green">#3c3</color>
+    <color name="timer_red">#f00</color>
+
+    <color name="white_selected">#DFDFDF</color>
+    <color name="button_blue">#303F9F</color>
+    <color name="ripple_blue">#C5CAE9</color>
+    <color name="button_red">#940b21</color>
+    <color name="ripple_red">#f35972</color>
+    <color name="button_green">#388E3C</color>
+    <color name="ripple_green">#C8E6C9</color>
+    <color name="twitter_blue">#1aa7ff</color>
+    <color name="google_red">#DD4B39</color>
+
+    <color name="iq_stats_chart_theme">@color/secondary_text_color</color>
+
+</resources>
