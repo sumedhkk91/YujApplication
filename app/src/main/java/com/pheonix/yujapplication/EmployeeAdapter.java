@@ -16,20 +16,28 @@ public class EmployeeAdapter extends BaseAdapter {
     List<String> list = new ArrayList<String>();
     Context context;
     LayoutInflater inflater;
+    String [] firstNameList, salaryList, ageList;
 
     EmployeeAdapter(Context context, List list) {
         this.context = context;
         this.list = list;
     }
 
+    EmployeeAdapter(Context context, String[] firstNameList, String[] salaryList, String[] ageList) {
+        this.context = context;
+        this.firstNameList = firstNameList;
+        this.salaryList = salaryList;
+        this.ageList = ageList;
+    }
+
     @Override
     public int getCount() {
-        return list.size();
+        return firstNameList.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return list.get(position);
+        return firstNameList[position];
     }
 
     @Override
@@ -47,8 +55,15 @@ public class EmployeeAdapter extends BaseAdapter {
             gridView = inflater.inflate(R.layout.employee_grid_layout, null);
         }
 
-        TextView textView =  gridView.findViewById(R.id.employeeTextView);
-        textView.setText(list.get(position));
+        TextView employeeTextView =  gridView.findViewById(R.id.employeeTextView);
+        employeeTextView.setText(firstNameList[position]);
+
+        TextView salaryTextView =  gridView.findViewById(R.id.salaryTextView);
+        salaryTextView.setText(salaryList[position]);
+
+        TextView ageTextView =  gridView.findViewById(R.id.ageTextView);
+        ageTextView.setText(ageList[position]);
+
         return gridView;
     }
 }

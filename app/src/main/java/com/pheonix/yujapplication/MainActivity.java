@@ -58,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
                             String id, firstName, salary, age, profile_image = "";
 
                             List<String> displayList = new ArrayList<String>();
+
+                            String firstNameList [] = new String[jsonArray.length()];
+                            String salaryList [] = new String[jsonArray.length()];
+                            String ageList [] = new String[jsonArray.length()];
+
                             displayList.add( "\t" + "Employee Name" + "\t" + "Salary" + "\t" + "Age" + "\n");
 
                             for (int i = 0; i < jsonArray.length(); i++) {
@@ -71,13 +76,17 @@ public class MainActivity extends AppCompatActivity {
                                 profile_image = employee.getString("profile_image");
 
                                 displayList.add("\t" + firstName + "\t" + salary + "\t " + age + "\n");
+
+                                firstNameList[i] = firstName;
+                                salaryList[i] = salary;
+                                ageList[i] = age;
                             }
 
                             gridView = findViewById(R.id.grid_view);
 
                             EmployeeAdapter employeeAdapter = new EmployeeAdapter(MainActivity.this, displayList);
-
-                            gridView.setAdapter(employeeAdapter);
+                            EmployeeAdapter employeeAdapterNew = new EmployeeAdapter(MainActivity.this, firstNameList, salaryList, ageList);
+                            gridView.setAdapter(employeeAdapterNew);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
