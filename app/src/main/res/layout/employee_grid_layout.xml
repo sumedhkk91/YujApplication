@@ -5,7 +5,7 @@
 
         <TextView
             android:id="@+id/employeeTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:text="TextView"
@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/salaryTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_marginLeft="20dp"
@@ -28,7 +28,7 @@
 
         <TextView
             android:id="@+id/ageTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:padding="5dp"

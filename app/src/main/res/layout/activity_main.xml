@@ -9,8 +9,9 @@
 
     <TextView
         android:id="@+id/instruction_text_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:layout_marginTop="30dp"
         android:text="Press the button below to get employee records"
         android:textColor="@color/pink"></TextView>
@@ -19,12 +20,21 @@
         android:id="@+id/button_parse"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textAlignment="center"
         android:layout_below="@id/instruction_text_view"
-        android:layout_marginTop="30dp"
+        android:layout_alignStart="@+id/instruction_text_view"
+        android:layout_alignLeft="@+id/instruction_text_view"
+        android:layout_alignEnd="@+id/instruction_text_view"
+        android:layout_alignRight="@+id/instruction_text_view"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="155dp"
+        android:gravity="center"
         android:text="Records"
         android:textAllCaps="false" />
 
-<LinearLayout
+    <LinearLayout
     android:id="@+id/linear_layout_home"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -33,8 +43,9 @@
     <TextView
         android:id="@+id/first_name_header_text_view"
         android:layout_below="@id/linear_layout_home"
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:layout_marginLeft="10dp"
         android:padding="5dp"
         android:layout_marginTop="30dp"
@@ -44,7 +55,8 @@
     <TextView
         android:id="@+id/salary_header_text_view"
         android:layout_below="@id/linear_layout_home"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:padding="5dp"
@@ -55,7 +67,8 @@
     <TextView
         android:id="@+id/age_header_text_view"
         android:layout_below="@id/linear_layout_home"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
+        android:textAlignment="center"
         android:layout_marginLeft="20dp"
         android:padding="5dp"
         android:layout_height="wrap_content"
