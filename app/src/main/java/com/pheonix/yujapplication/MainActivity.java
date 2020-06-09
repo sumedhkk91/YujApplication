@@ -2,9 +2,12 @@ package com.pheonix.yujapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -18,17 +21,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextViewResult;
     private RequestQueue mQueue;
+    GridView gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextViewResult = findViewById(R.id.text_view_result);
         Button buttonParse = findViewById(R.id.button_parse);
         mQueue = Volley.newRequestQueue(this);
         buttonParse.setOnClickListener(new View.OnClickListener() {
@@ -46,17 +51,34 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+
                         try {
                             JSONArray jsonArray = response.getJSONArray("data");
+
+                            String id, firstName, salary, age, profile_image = "";
+
+                            List<String> displayList = new ArrayList<String>();
+                            displayList.add( "\t" + "Employee Name" + "\t" + "Salary" + "\t" + "Age" + "\n");
+
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject employee = jsonArray.getJSONObject(i);
-                                int id = employee.getInt("id");
-                                String firstName = employee.getString("employee_name");
-                                int salary = employee.getInt("employee_salary");
-                                int age = employee.getInt("employee_age");
-                                String profile_image = employee.getString("profile_image");
-                                mTextViewResult.append(String.valueOf(id) + ", " + firstName + ", "+ String.valueOf(salary) + ", " + String.valueOf(age)+ ", "+ profile_image + "\n\n");
+
+
+                                id = String.valueOf(employee.getInt("id"));
+                                firstName = employee.getString("employee_name");
+                                salary = String.valueOf(employee.getInt("employee_salary"));
+                                age = String.valueOf(employee.getInt("employee_age"));
+                                profile_image = employee.getString("profile_image");
+
+                                displayList.add("\t" + firstName + "\t" + salary + "\t " + age + "\n");
                             }
+
+                            gridView = findViewById(R.id.grid_view);
+
+                            EmployeeAdapter employeeAdapter = new EmployeeAdapter(MainActivity.this, displayList);
+
+                            gridView.setAdapter(employeeAdapter);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -69,5 +91,4 @@ public class MainActivity extends AppCompatActivity {
         });
         mQueue.add(request);
     }
-
 }
